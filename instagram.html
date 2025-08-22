@@ -1,169 +1,172 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OGQ 이벤트 참여하러 가는 중...</title>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMEFRTJ5ZC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FMEFRTJ5ZC');
-    </script>
-    
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        .loading-container {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 400px;
-            width: 90%;
-            border: 1px solid #e1e1e1;
-        }
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #28a745;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        p {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: #f0f0f0;
-            border-radius: 3px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #28a745, #20c997);
-            border-radius: 3px;
-            animation: progress 1s ease-in-out;
-            width: 100%;
-        }
-        @keyframes progress {
-            from { width: 0%; }
-            to { width: 100%; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OGQ 이벤트 참여하러 가는 중...</title>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMEFRTJ5ZC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FMEFRTJ5ZC');
+  </script>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .loading-container {
+      background: white;
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 90%;
+      border: 1px solid #e1e1e1;
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #28a745;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    p {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: #f0f0f0;
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #28a745, #20c997);
+      border-radius: 3px;
+      animation: progress 1s ease-in-out;
+      width: 100%;
+    }
+    @keyframes progress {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+  </style>
 </head>
 <body>
-    <div class="loading-container">
-        <div class="logo">
-            <img src="https://i.imgur.com/KSrGXnG.png" alt="OGQ Logo">
-        </div>
-        <h1>이벤트 공지 보러 가는 중...</h1>
-        <p>지큐랑 힘내서 같이 가요!</p>
-        <div class="progress-bar">
-            <div class="progress-fill"></div>
-        </div>
-        <div class="spinner"></div>
+  <div class="loading-container">
+    <div class="logo">
+      <img src="https://i.imgur.com/KSrGXnG.png" alt="OGQ Logo">
     </div>
-    
-    <script>
-        // URL에서 UTM 파라미터 추출하는 함수
-        function getUrlParams() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return {
-                utm_source: urlParams.get('utm_source') || 'direct',
-                utm_medium: urlParams.get('utm_medium') || 'none',
-                utm_campaign: urlParams.get('utm_campaign') || 'none',
-                utm_content: urlParams.get('utm_content') || '',
-                utm_term: urlParams.get('utm_term') || ''
-            };
-        }
-        
-        // UTM 파라미터 가져오기
-        const utmParams = getUrlParams();
-        
-        // 페이지 방문 추적 (UTM 정보 포함)
-        gtag('event', 'page_view', {
-            'page_title': 'Instagram Redirect Page',
-            'page_location': window.location.href,
-            'campaign_source': utmParams.utm_source,
-            'campaign_medium': utmParams.utm_medium,
-            'campaign_name': utmParams.utm_campaign,
-            'campaign_content': utmParams.utm_content,
-            'campaign_term': utmParams.utm_term
+    <h1>이벤트 공지 보러 가는 중...</h1>
+    <p>지큐랑 힘내서 같이 가요!</p>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    // URL에서 UTM 파라미터 추출
+    function getUrlParams() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return {
+        utm_source: urlParams.get('utm_source') || 'direct',
+        utm_medium: urlParams.get('utm_medium') || 'none',
+        utm_campaign: urlParams.get('utm_campaign') || 'none',
+        utm_content: urlParams.get('utm_content') || '',
+        utm_term: urlParams.get('utm_term') || ''
+      };
+    }
+
+    const utmParams = getUrlParams();
+
+    // Instagram 최종 URL
+    const targetUrl = `https://instagram.com/ogq_official?utm_source=${utmParams.utm_source}&utm_medium=${utmParams.utm_medium}&utm_campaign=${utmParams.utm_campaign}`;
+
+    // 리다이렉트 함수
+    function redirectToInstagram() {
+      window.location.href = targetUrl;
+    }
+
+    // 1) page_view 이벤트 전송
+    gtag('event', 'page_view', {
+      'page_title': 'Instagram Redirect Page',
+      'page_location': window.location.href,
+      'campaign_source': utmParams.utm_source,
+      'campaign_medium': utmParams.utm_medium,
+      'campaign_name': utmParams.utm_campaign,
+      'campaign_content': utmParams.utm_content,
+      'campaign_term': utmParams.utm_term
+    });
+
+    // 2) click 이벤트 전송 → 완료 후 campaign_redirect 실행
+    gtag('event', 'click', {
+      'event_category': 'outbound_link',
+      'event_label': 'instagram_redirect',
+      'event_action': 'redirect_to_instagram',
+      'destination_url': targetUrl,
+      'campaign_source': utmParams.utm_source,
+      'campaign_medium': utmParams.utm_medium,
+      'campaign_name': utmParams.utm_campaign,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+        // 3) click 전송 후 → campaign_redirect 이벤트
+        gtag('event', 'campaign_redirect', {
+          'event_category': 'campaign',
+          'event_label': `${utmParams.utm_source}_${utmParams.utm_campaign}`,
+          'campaign_source': utmParams.utm_source,
+          'campaign_medium': utmParams.utm_medium,
+          'campaign_name': utmParams.utm_campaign,
+          'event_callback': redirectToInstagram   // 전송 완료 후 리다이렉트
         });
-        
-        // 1초 후 Instagram으로 리다이렉트
-        setTimeout(function() {
-            // UTM 파라미터를 포함한 Instagram URL 생성
-            const targetUrl = `https://www.instagram.com/ogq_official?utm_source=${utmParams.utm_source}&utm_medium=${utmParams.utm_medium}&utm_campaign=${utmParams.utm_campaign}`;
-            
-            // 클릭 이벤트 추적 (UTM 정보 포함)
-            gtag('event', 'click', {
-                'event_category': 'outbound_link',
-                'event_label': 'instagram_redirect',
-                'event_action': 'redirect_to_instagram',
-                'destination_url': targetUrl,
-                'campaign_source': utmParams.utm_source,
-                'campaign_medium': utmParams.utm_medium,
-                'campaign_name': utmParams.utm_campaign,
-                'transport_type': 'beacon'
-            });
-            
-            // 추가적인 커스텀 이벤트 (캠페인 성과 측정용)
-            gtag('event', 'campaign_redirect', {
-                'event_category': 'campaign',
-                'event_label': `${utmParams.utm_source}_${utmParams.utm_campaign}`,
-                'campaign_source': utmParams.utm_source,
-                'campaign_medium': utmParams.utm_medium,
-                'campaign_name': utmParams.utm_campaign
-            });
-            
-            // Instagram으로 리다이렉트
-            window.location.href = targetUrl;
-        }, 1000);
-    </script>
+      }
+    });
+
+    // 4) fallback: 혹시 콜백이 모두 안 불리면 3초 뒤 강제 이동
+    setTimeout(redirectToInstagram, 3000);
+  </script>
 </body>
 </html>
