@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OGQ 이벤트 참여하러 가는 중...</title>
     
-    <!-- Google Analytics - 새로운 측정 ID로 변경 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=새로운_측정_ID"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMEFRTJ5ZC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '새로운_측정_ID');
+        gtag('config', 'G-FMEFRTJ5ZC');
     </script>
+    
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -85,7 +86,7 @@
             height: 100%;
             background: linear-gradient(90deg, #28a745, #20c997);
             border-radius: 3px;
-            animation: progress 0.5s ease-in-out;
+            animation: progress 1s ease-in-out;
             width: 100%;
         }
         @keyframes progress {
@@ -106,43 +107,63 @@
         </div>
         <div class="spinner"></div>
     </div>
+    
     <script>
-        // 1. 페이지 방문 추적 (GitHub 사이트 방문)
+        // URL에서 UTM 파라미터 추출하는 함수
+        function getUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                utm_source: urlParams.get('utm_source') || 'direct',
+                utm_medium: urlParams.get('utm_medium') || 'none',
+                utm_campaign: urlParams.get('utm_campaign') || 'none',
+                utm_content: urlParams.get('utm_content') || '',
+                utm_term: urlParams.get('utm_term') || ''
+            };
+        }
+        
+        // UTM 파라미터 가져오기
+        const utmParams = getUrlParams();
+        
+        // 페이지 방문 추적 (UTM 정보 포함)
         gtag('event', 'page_view', {
             'page_title': 'Instagram Redirect Page',
-            'page_location': 'https://ogq-official.github.io/instagram.html',
-            'custom_parameter': 'ogq_github_redirect'
+            'page_location': window.location.href,
+            'campaign_source': utmParams.utm_source,
+            'campaign_medium': utmParams.utm_medium,
+            'campaign_name': utmParams.utm_campaign,
+            'campaign_content': utmParams.utm_content,
+            'campaign_term': utmParams.utm_term
         });
         
-        // 2. 0.5초 후 Instagram으로 자동 이동
+        // 1초 후 Instagram으로 리다이렉트
         setTimeout(function() {
-            // 새로운 UTM 파라미터가 포함된 Instagram URL
-            const utmUrl = "https://instagram.com/ogq_official?utm_source=naver_ogq&utm_medium=banner&utm_campaign=newuser2025";
+            // UTM 파라미터를 포함한 Instagram URL 생성
+            const targetUrl = `https://instagram.com/ogq_official?utm_source=${utmParams.utm_source}&utm_medium=${utmParams.utm_medium}&utm_campaign=${utmParams.utm_campaign}`;
             
-            // 3. 클릭 이벤트 추적 (새 UTM 정보로 업데이트)
+            // 클릭 이벤트 추적 (UTM 정보 포함)
             gtag('event', 'click', {
-                'event_category': 'outbound_link', 
+                'event_category': 'outbound_link',
                 'event_label': 'instagram_redirect',
-                'event_action': 'naver_to_instagram',
-                'destination_url': utmUrl,
-                'campaign_source': 'naver_ogq',
-                'campaign_medium': 'banner',
-                'campaign_name': 'newuser2025',
+                'event_action': 'redirect_to_instagram',
+                'destination_url': targetUrl,
+                'campaign_source': utmParams.utm_source,
+                'campaign_medium': utmParams.utm_medium,
+                'campaign_name': utmParams.utm_campaign,
                 'transport_type': 'beacon'
             });
             
-            // 4. 커스텀 이벤트 추적 (새 캠페인 정보로 업데이트)
-            gtag('event', 'conversion', {
+            // 추가적인 커스텀 이벤트 (캠페인 성과 측정용)
+            gtag('event', 'campaign_redirect', {
                 'event_category': 'campaign',
-                'event_label': 'newuser2025_conversion',
-                'campaign_source': 'naver_ogq',
-                'campaign_medium': 'banner',
-                'campaign_name': 'newuser2025'
+                'event_label': `${utmParams.utm_source}_${utmParams.utm_campaign}`,
+                'campaign_source': utmParams.utm_source,
+                'campaign_medium': utmParams.utm_medium,
+                'campaign_name': utmParams.utm_campaign
             });
             
-            // 5. Instagram으로 리다이렉트
-            window.location.href = utmUrl;
-        }, 500);
+            // Instagram으로 리다이렉트
+            window.location.href = targetUrl;
+        }, 1000);
     </script>
 </body>
 </html>
